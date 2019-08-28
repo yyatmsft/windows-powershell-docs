@@ -7,7 +7,7 @@
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content"
       },
@@ -22,7 +22,7 @@
           "_dependentPackages/CommonPlugins/tools/PowerShellReference.ps1"
         ]
       },
-      "monikerPath": [
+     "monikerPath": [
         "mapping/monikerMapping.json"
       ]
     }
@@ -32,9 +32,7 @@
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://cpubwin.visualstudio.com/_git/powershell",
   "skip_source_output_uploading": false,
-  "need_preview_pull_request": true,
-  "enable_incremental_build": true,
-  "resolve_user_profile_using_github": true,
+  "need_preview_pull_request": false,
   "contribution_branch_mappings": {},
   "dependent_repositories": [
     {
@@ -47,8 +45,6 @@
   "branch_target_mapping": {},
   "need_generate_pdf_url_template": false,
   "targets": {},
-  "need_generate_pdf": false,
-  "need_generate_intellisense": false,
   "dependent_packages": [
     {
       "path_to_root": "_dependentPackages/azurecli.plugins",
