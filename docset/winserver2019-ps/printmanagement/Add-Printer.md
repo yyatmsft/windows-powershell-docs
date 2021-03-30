@@ -35,10 +35,19 @@ Add-Printer [-ConnectionName] <String> [-CimSession <CimSession[]>] [-ThrottleLi
 ```
 Add-Printer [-Comment <String>] [-Datatype <String>] [-UntilTime <UInt32>] [-KeepPrintedJobs]
  [-Location <String>] [-SeparatorPageFile <String>] [-ComputerName <String>] [-Shared] [-ShareName <String>]
- [-StartTime <UInt32>] [-Name] <String> [-PermissionSDDL <String>] [-PrintProcessor <String>]
+ [-StartTime <UInt32>] [-PermissionSDDL <String>] [-PrintProcessor <String>]
  [-Priority <UInt32>] [-Published] [-RenderingMode <RenderingModeEnum>] [-DisableBranchOfficeLogging]
  [-BranchOfficeOfflineLogSizeMB <UInt32>] [-DeviceURL <String>] [-DeviceUUID <String>]
  [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ipp
+```
+Add-Printer [-Comment <String>] [-Datatype <String>] [-UntilTime <UInt32>] [-KeepPrintedJobs]
+ [-Location <String>] [-SeparatorPageFile <String>] [-ComputerName <String>] [-Shared] [-ShareName <String>]
+ [-StartTime <UInt32>] [-PermissionSDDL <String>] [-PrintProcessor <String>]
+ [-Priority <UInt32>] [-Published] [-RenderingMode <RenderingModeEnum>] [-DisableBranchOfficeLogging]
+ [-BranchOfficeOfflineLogSizeMB <UInt32>] [-IppURL <String>] [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### port
@@ -206,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceURL
-Specifies a URL for the directed discovery of a Web Services on Devices (WSD) printer to add to the specified computer.s
+Specifies a URL for the directed discovery of a Web Services on Devices (WSD) printer to add to the specified computer.
 
 ```yaml
 Type: String
@@ -226,6 +235,21 @@ Specifies the multicast UUID for device detection for the WSD port.
 ```yaml
 Type: String
 Parameter Sets: wsd
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IppURL
+Specifies URL for the directed discovery of an Internet Printing Protocol (IPP) printer to add to the specified computer.
+
+```yaml
+Type: String
+Parameter Sets: ipp
 Aliases: 
 
 Required: False
@@ -297,14 +321,14 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies the name of the printer to add.
+Specifies the name of the printer to add. This parameter is ignored if -DeviceURL or -DeviceUUID or -IppURL is specified.
 
 ```yaml
 Type: String
-Parameter Sets: wsd, port
+Parameter Sets: port
 Aliases: 
 
-Required: True
+Required: False if -DeviceURL or -DeviceUUID or -IppURL is specified. True in other cases.
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
